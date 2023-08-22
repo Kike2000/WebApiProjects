@@ -1,3 +1,6 @@
+//En program.cs configuramos todos nuestros servicios y la canalización de peticiones
+
+//
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
