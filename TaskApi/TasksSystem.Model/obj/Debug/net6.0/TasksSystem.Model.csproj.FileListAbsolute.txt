@@ -1,0 +1,14 @@
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\bin\Debug\net6.0\TasksSystem.Model.deps.json
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\bin\Debug\net6.0\TasksSystem.Model.runtimeconfig.json
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\bin\Debug\net6.0\TasksSystem.Model.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\bin\Debug\net6.0\TasksSystem.Model.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.csproj.AssemblyReference.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.AssemblyInfoInputs.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.AssemblyInfo.cs
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\refint\TasksSystem.Model.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\TasksSystem.Model.genruntimeconfig.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Model\obj\Debug\net6.0\ref\TasksSystem.Model.dll

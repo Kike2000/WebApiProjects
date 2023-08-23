@@ -1,0 +1,17 @@
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.Utility.deps.json
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.Utility.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.Utility.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.DTO.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.Model.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.DTO.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\bin\Debug\net6.0\TasksSystem.Model.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.csproj.AssemblyReference.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.AssemblyInfoInputs.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.AssemblyInfo.cs
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\refint\TasksSystem.Utility.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\TasksSystem.Utility.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.Utility\obj\Debug\net6.0\ref\TasksSystem.Utility.dll

@@ -1,0 +1,15 @@
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.csproj.AssemblyReference.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.AssemblyInfoInputs.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.AssemblyInfo.cs
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\bin\Debug\net6.0\TasksSystem.DAL.deps.json
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\bin\Debug\net6.0\TasksSystem.DAL.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\bin\Debug\net6.0\TasksSystem.DAL.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\bin\Debug\net6.0\TasksSystem.Model.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\bin\Debug\net6.0\TasksSystem.Model.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\refint\TasksSystem.DAL.dll
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\TasksSystem.DAL.pdb
+C:\Users\pedro\OneDrive\Documentos\GitHub\WebApiProjects\TaskApi\TasksSystem.DAL\obj\Debug\net6.0\ref\TasksSystem.DAL.dll
