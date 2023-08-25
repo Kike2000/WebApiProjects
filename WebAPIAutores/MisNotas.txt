@@ -1,0 +1,47 @@
+Curso New Api
+_________________________________________________________________________________________________________________________
+
+Módulo 3:
+ASP.NET Core es la evolución del framework ASP.NET el cuál sólo se podía ejecutar en Windows y era monolítico
+
+ASP.NET = ASP.NET Framework
+
+ASP.NET Core:
+Funciona en la nube permitiendo un escalamiento vertical y horizontal
+
+Escalamiento horizontal: Cuando agregamos más servidores para procesar información.
+Escalamiento vertical: Cuando mejoramos las características de los servidores externos. (RAM o eficiencia del software)
+Viene con un contenedor de inversión de cotroles por defecto antes tenías que instalar biblioteca.
+
+
+DEBES USAR .NET CORE si:
+Vas a crear microservicios
+Vas a utilizar contenedores docker
+Necesitas capacidad multi-plataforma
+
+
+DEBES USAR .NET Framework si:
+Utilizarás una tecnología la cual no es soportada por .NET CORE, como WFC o WebForms
+Necesitas utilizar APIs específicos de Windows. Dado  que .NET Core es multiplataforma,
+este no asume el SO donde se va a ejecutar.
+Existen funcionalidades de .NET que aún no están disponibles en .NET Core
+
+OPENAPI o Swagger: Manera de tener un listado de las rutas de la app.
+
+Controlador: Clase que se encarga de recibir peticiones HTTP y regresa una respuesta
+
+Con .NET 6 la clase Startup.cs se removió, ahí se configuraban los servicios y middleware de la app.
+
+
+_dbContext: Es una clase generada por EntityFramework el cual nos ayuda a la creación y manipulación de la base de datos. Proporcionando una interfaz que permite interactuar con la base de datos utilizando modelos de objetos en lugar de consultas SQL. Proporciona métodos para realizar consultas LINQ, Mapeo de Objetos a Tablas, Permite que los cambios se sincronicen con la base de datos mediante el método SaveChanges.
+
+Microsoft.EntityFrameworkCore.Tools: Ejecutar comandos
+_________________________________________________________________________________________________________________________
+
+Módulo 4:
+
+
+
+
+
+
