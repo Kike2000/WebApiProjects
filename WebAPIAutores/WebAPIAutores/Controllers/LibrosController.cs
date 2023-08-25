@@ -28,8 +28,8 @@ namespace WebAPIAutores.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(Libro libro)
         {
-            var existeAutor = await _context.Autor.AnyAsync(x => x.Id == libro.AutorId);
-            if (existeAutor)
+            var existeAutor = await _context.Autor.FirstOrDefaultAsync(x => x.Id == libro.AutorId);
+            if (existeAutor != null)
             {
                 libro.Autor = existeAutor;
                 _context.Libro.Add(libro);
