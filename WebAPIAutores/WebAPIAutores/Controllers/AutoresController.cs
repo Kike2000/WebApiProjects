@@ -8,6 +8,9 @@ namespace WebAPIAutores.Controllers
 {
     //Permite hacer valiciones automáticas, respecto a la data recibida
     [ApiController]
+
+    //En el mundo real podemos ver lo siguiente: Es como un placeholder o variable que pondría el nombre del controlador
+    //[Route("api/[controller]")]
     [Route("api/autores")]
     public class AutoresController : ControllerBase
     {
@@ -17,11 +20,43 @@ namespace WebAPIAutores.Controllers
             _context = dbContext;
 
         }
-        [HttpGet]
+        [HttpGet]             //api/autores
+        [HttpGet("listado")] //api/autores/listado, el endpoint puede tener dos controladores
+        [HttpGet("/listado")] // listado
         public async Task<ActionResult<List<Autor>>> Get()
         {
             return await _context.Autor.ToListAsync();
         }
+        [HttpGet("first")]
+        public async Task<Autor> GetFirst()
+        {
+            return await _context.Autor.FirstOrDefaultAsync();
+        }
+
+        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}/{param?}")]
+        //[HttpGet("{id:int}/{param)persona")]
+        public async Task<ActionResult<Autor>> Get(int id, string param)
+        {
+            var autor = await _context.Autor.FirstOrDefaultAsync(p => p.Id == id);
+            if (autor == null)
+            {
+                return NotFound();
+            }
+            return autor;
+        }
+
+        [HttpGet("{nombre}")]
+        public async Task<ActionResult<Autor>> Get(string nombre)
+        {
+            var autor = await _context.Autor.FirstOrDefaultAsync(p => p.Nombre == nombre);
+            if (autor == null)
+            {
+                return NotFound();
+            }
+            return autor;
+        }
+
         [HttpPost]
         public async Task<ActionResult> Post(Autor autor)
         {
