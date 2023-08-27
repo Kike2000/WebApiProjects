@@ -41,6 +41,7 @@ namespace WebAPIAutores.Controllers
             var autor = await _context.Autor.FirstOrDefaultAsync(p => p.Id == id);
             if (autor == null)
             {
+                //El tipo de dato de NotFound, hereda de ActionResult entonces podemos regresar este tipo de dato
                 return NotFound();
             }
             return autor;
