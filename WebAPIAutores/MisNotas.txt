@@ -74,9 +74,11 @@ podemos regresar Task vs Task<T>
 Con Task no retornamos un valor al final de la ejecución de la función asíncrona.
 Con Task<T> es para retornar el tipo de T en el futuro.
 
-
 Cuando no usar programación asíncrona:
 Tiene un costo de rendimiento
+
+ModelBinding: Nos permite mapear datos de una petición http a los parámetros de un endpoint
+
 
 
 
