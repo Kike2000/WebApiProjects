@@ -39,6 +39,47 @@ Microsoft.EntityFrameworkCore.Tools: Ejecutar comandos
 _________________________________________________________________________________________________________________________
 
 Módulo 4:
+Tener un web api involucra tener clientes que harán peticiones http a la webapi
+
+Endpoint: función de un controlador que se ejecuta en respuesta a una petición HTTP realizada a nuestro Web API
+
+Controlador: Clase que agrupa un conjunto de acciones
+
+Reglas de mapeo: Permiten mapear una URL o ruta con un endpoint.
+
+Si tengo un endpoint que toma como parámetro un int y le mando un string, me va a mandar error entonces podemos agregar una restricción agregando:
+[HttpGet("{id:int}")]
+en lugar de:
+[HttpGet("{id}")]
+con string no se ponen las restricciones
+
+Con IActionResult se puede hacer lo siguiente:
+return NotFound();
+return Ok(autor);
+
+Programación asíncrona:
+Es recomendable trabajar con esta en bases de datos
+Cuando ejecutamos una función asíncrona, nuestro servidor web se pone a hacer otras tareas mientras la función se ejecuta.
+Por que tendremos una app mas eficiente, realizando tareas pendientes.
+Cuando la app tenga mas usuarios, será mas lenta ya que el hilo que busca las respuestas a la bd se mantendrá congelado
+
+async: Marca la función como asíncrona
+await: Hacemos una espera asíncrona de la función.
+
+Cuando usar programación asíncrona:
+Cuando realicemos operaciones I/0 (Entrada y salida)
+Ejemplos: LLamados a Web APIs, leer archivos en una PC, realizar operaciones con bases de datos.
+
+podemos regresar Task vs Task<T>
+Con Task no retornamos un valor al final de la ejecución de la función asíncrona.
+Con Task<T> es para retornar el tipo de T en el futuro.
+
+
+Cuando no usar programación asíncrona:
+Tiene un costo de rendimiento
+
+
+
 
 
 

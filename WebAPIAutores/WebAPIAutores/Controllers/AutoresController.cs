@@ -28,7 +28,7 @@ namespace WebAPIAutores.Controllers
             return await _context.Autor.ToListAsync();
         }
         [HttpGet("first")]
-        public async Task<Autor> GetFirst()
+        public async Task<Autor> GetFirst([FromHeader] int miValor, [FromQuery] string nombre)
         {
             return await _context.Autor.FirstOrDefaultAsync();
         }
@@ -48,7 +48,7 @@ namespace WebAPIAutores.Controllers
         }
 
         [HttpGet("{nombre}")]
-        public async Task<ActionResult<Autor>> Get(string nombre)
+        public async Task<ActionResult<Autor>> Get([FromRoute] string nombre)
         {
             var autor = await _context.Autor.FirstOrDefaultAsync(p => p.Nombre == nombre);
             if (autor == null)
@@ -59,7 +59,7 @@ namespace WebAPIAutores.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(Autor autor)
+        public async Task<ActionResult> Post([FromBody] Autor autor)
         {
             try
             {
