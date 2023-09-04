@@ -63,9 +63,18 @@ namespace WebAPIAutores.Controllers
         {
             try
             {
-                _context.Autor.Add(autor);
-                await _context.SaveChangesAsync();
-                return Ok();
+                var autorExist = await _context.Autor.AnyAsync(x => x.Nombre.ToUpper() == autor.Nombre.ToUpper());
+                if (!autorExist)
+                {
+                    _context.Autor.Add(autor);
+                    await _context.SaveChangesAsync();
+                    return Ok();
+                }
+                // It automatically creates a BadRequestObjectResult with the specified error message as its content.
+                return BadRequest("El autor ya existe");
+
+                //This allows you to have more control over the response, such as setting additional HTTP headers or response status codes, if needed
+                //return new BadRequestObjectResult("El autor ya existe");
             }
             catch (Exception ex)
             {
