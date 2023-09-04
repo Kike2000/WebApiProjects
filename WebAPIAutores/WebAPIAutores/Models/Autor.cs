@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebAPIAutores.Validations;
 
 namespace WebAPIAutores.Models
 {
@@ -8,6 +9,7 @@ namespace WebAPIAutores.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "El Nombre es requerido.")]
         [StringLength(maximumLength: 5, ErrorMessage = "El campo {0} no debe de tener más de {1} caracteres")]
+        [FirtsLetterCapitalAttribute]
         public string Nombre { get; set; }
         [Range(18, 120)]
         [NotMapped]
