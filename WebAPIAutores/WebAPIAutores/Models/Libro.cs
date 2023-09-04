@@ -1,4 +1,6 @@
-﻿namespace WebAPIAutores.Models
+﻿using WebAPIAutores.Validations;
+
+namespace WebAPIAutores.Models
 {
     public class Libro
     {
