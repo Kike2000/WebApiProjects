@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WebAPIAutores.Data;
+using WebAPIAutores.Services;
 
 namespace WebAPIAutores
 {
@@ -15,10 +16,10 @@ namespace WebAPIAutores
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddJsonOptions(x=>
-            x.JsonSerializerOptions.ReferenceHandler= ReferenceHandler.IgnoreCycles
+            services.AddControllers().AddJsonOptions(x =>
+            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
             );
-
+            services.AddTransient<IService, ServicioA>();
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
