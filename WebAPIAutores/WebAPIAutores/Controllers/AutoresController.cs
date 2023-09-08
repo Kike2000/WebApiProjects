@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Net;
 using WebAPIAutores.Data;
 using WebAPIAutores.Models;
+using WebAPIAutores.Services;
 
 namespace WebAPIAutores.Controllers
 {
@@ -15,9 +16,11 @@ namespace WebAPIAutores.Controllers
     public class AutoresController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public AutoresController(ApplicationDbContext dbContext)
+        private readonly IService _service;
+        public AutoresController(ApplicationDbContext dbContext, IService service)
         {
             _context = dbContext;
+            _service = service;
 
         }
         [HttpGet]             //api/autores
@@ -25,6 +28,7 @@ namespace WebAPIAutores.Controllers
         [HttpGet("/listado")] // listado
         public async Task<ActionResult<List<Autor>>> Get()
         {
+            _service.RealizarTarea();
             return await _context.Autor.ToListAsync();
         }
         [HttpGet("first")]
