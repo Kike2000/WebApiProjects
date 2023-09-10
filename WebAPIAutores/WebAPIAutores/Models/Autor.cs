@@ -21,8 +21,9 @@ namespace WebAPIAutores.Models
         //[NotMapped]
         //public string Url { get; set; }
         public List<Libro> Libros { get; set; }
-
+        [NotMapped]
         public int Menor { get; set; }
+        [NotMapped]
         public int Mayor { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
