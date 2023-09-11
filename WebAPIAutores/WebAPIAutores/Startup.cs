@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WebAPIAutores.Data;
 using WebAPIAutores.Middlewares;
@@ -24,6 +25,11 @@ namespace WebAPIAutores
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddTransient<ServicioTransient>();
+            services.AddScoped<ServicioScoped>();
+            services.AddSingleton<ServicioSingleton>();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+            services.AddResponseCaching();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
         }
@@ -32,7 +38,7 @@ namespace WebAPIAutores
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             //app.UseMiddleware<LogAnswerMiddleware>();
-            app.UseLogAnswerMiddleware();
+            //app.UseLogAnswerMiddleware();
 
 
             app.Map("/ruta1", app =>
@@ -51,6 +57,10 @@ namespace WebAPIAutores
                 app.UseSwaggerUI();
             }
             app.UseRouting();
+
+            //Middleware of caché
+            app.UseResponseCaching();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

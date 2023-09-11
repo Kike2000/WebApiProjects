@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using WebAPIAutores.Data;
@@ -9,7 +10,8 @@ namespace WebAPIAutores.Controllers
 {
     //Permite hacer valiciones automáticas, respecto a la data recibida
     [ApiController]
-
+    //Todos los endpoints están protegidos
+    //[Authorize]
     //En el mundo real podemos ver lo siguiente: Es como un placeholder o variable que pondría el nombre del controlador
     //[Route("api/[controller]")]
     [Route("api/autores")]
@@ -17,15 +19,26 @@ namespace WebAPIAutores.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IService _service;
-        public AutoresController(ApplicationDbContext dbContext, IService service)
+        private readonly ServicioTransient servicioTransient;
+        private readonly ServicioScoped servicioScoped;
+        private readonly ServicioSingleton servicioSingleton;
+
+        public AutoresController(ApplicationDbContext dbContext, IService service,
+            ServicioTransient servicioTransient,
+            ServicioScoped servicioScoped,
+            ServicioSingleton servicioSingleton)
         {
             _context = dbContext;
             _service = service;
-
+            this.servicioTransient = servicioTransient;
+            this.servicioScoped = servicioScoped;
+            this.servicioSingleton = servicioSingleton;
         }
         [HttpGet]             //api/autores
         [HttpGet("listado")] //api/autores/listado, el endpoint puede tener dos controladores
         [HttpGet("/listado")] // listado
+        [ResponseCache (Duration =10)]
+        //[Authorize]
         public async Task<ActionResult<List<Autor>>> Get()
         {
             _service.RealizarTarea();
@@ -61,6 +74,23 @@ namespace WebAPIAutores.Controllers
             }
             return autor;
         }
+        [HttpGet("GUID")]
+        [ResponseCache(Duration = 10)]
+        public ActionResult ObtenerGuids()
+        {
+            return Ok(new
+            {
+                AutoresControllerTransient = servicioTransient.Guid,
+                servicioTransient = servicioTransient.Guid,
+
+                AutoresControllerScoped = servicioScoped.Guid,
+                servicioScoped = servicioScoped.Guid,
+
+                AutoresControlleSingleton = servicioSingleton.Guid,
+                servicioSingleton = servicioSingleton.Guid,
+            });
+        }
+
 
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Autor autor)
