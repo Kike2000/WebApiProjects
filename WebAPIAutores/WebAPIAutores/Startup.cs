@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WebAPIAutores.Data;
+using WebAPIAutores.Filters;
 using WebAPIAutores.Middlewares;
 using WebAPIAutores.Services;
 
@@ -18,7 +19,11 @@ namespace WebAPIAutores
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddJsonOptions(x =>
+            //Registro global de ExceptionFilter
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(ExceptionFilter));
+            }).AddJsonOptions(x =>
             x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
             );
             services.AddTransient<IService, ServicioA>();
@@ -26,8 +31,10 @@ namespace WebAPIAutores
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<ServicioTransient>();
+            services.AddTransient<MyActionFilter>();
             services.AddScoped<ServicioScoped>();
             services.AddSingleton<ServicioSingleton>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
             services.AddResponseCaching();
             services.AddEndpointsApiExplorer();

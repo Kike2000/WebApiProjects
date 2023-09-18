@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using WebAPIAutores.Data;
+using WebAPIAutores.Filters;
 using WebAPIAutores.Models;
 using WebAPIAutores.Services;
 
@@ -37,7 +38,8 @@ namespace WebAPIAutores.Controllers
         [HttpGet]             //api/autores
         [HttpGet("listado")] //api/autores/listado, el endpoint puede tener dos controladores
         [HttpGet("/listado")] // listado
-        [ResponseCache (Duration =10)]
+        [ServiceFilter(typeof(MyActionFilter))]
+        //[ResponseCache(Duration = 10)]
         //[Authorize]
         public async Task<ActionResult<List<Autor>>> Get()
         {
@@ -75,7 +77,8 @@ namespace WebAPIAutores.Controllers
             return autor;
         }
         [HttpGet("GUID")]
-        [ResponseCache(Duration = 10)]
+        //[ResponseCache(Duration = 10)]
+        [ServiceFilter(typeof(MyActionFilter))]
         public ActionResult ObtenerGuids()
         {
             return Ok(new
