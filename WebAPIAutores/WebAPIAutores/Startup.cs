@@ -34,7 +34,7 @@ namespace WebAPIAutores
             services.AddTransient<MyActionFilter>();
             services.AddScoped<ServicioScoped>();
             services.AddSingleton<ServicioSingleton>();
-
+            services.AddHostedService<WriteFile>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
             services.AddResponseCaching();
             services.AddEndpointsApiExplorer();
