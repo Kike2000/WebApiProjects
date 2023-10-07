@@ -19,32 +19,20 @@ namespace WebAPIAutores.Controllers
     public class AutoresController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly IService _service;
-        private readonly ServicioTransient servicioTransient;
-        private readonly ServicioScoped servicioScoped;
-        private readonly ServicioSingleton servicioSingleton;
 
-        public AutoresController(ApplicationDbContext dbContext, IService service,
-            ServicioTransient servicioTransient,
-            ServicioScoped servicioScoped,
-            ServicioSingleton servicioSingleton)
+        public AutoresController(ApplicationDbContext dbContext)
         {
             _context = dbContext;
-            _service = service;
-            this.servicioTransient = servicioTransient;
-            this.servicioScoped = servicioScoped;
-            this.servicioSingleton = servicioSingleton;
         }
         [HttpGet]             //api/autores
-        [HttpGet("listado")] //api/autores/listado, el endpoint puede tener dos controladores
-        [HttpGet("/listado")] // listado
-        [ServiceFilter(typeof(MyActionFilter))]
+        //[HttpGet("listado")] api/autores/listado, el endpoint puede tener dos controladores
+        //[HttpGet("/listado")] // listado
+        //[ServiceFilter(typeof(MyActionFilter))]
         //[ResponseCache(Duration = 10)]
         //[Authorize]
         public async Task<ActionResult<List<Autor>>> Get()
         {
-            _service.RealizarTarea();
-            return await _context.Autor.ToListAsync();
+            return await _context.Autor.Include(x => x.Libros).ToListAsync();
         }
         [HttpGet("first")]
         public async Task<Autor> GetFirst([FromHeader] int miValor, [FromQuery] string nombre)
@@ -76,23 +64,25 @@ namespace WebAPIAutores.Controllers
             }
             return autor;
         }
-        [HttpGet("GUID")]
-        //[ResponseCache(Duration = 10)]
-        [ServiceFilter(typeof(MyActionFilter))]
-        public ActionResult ObtenerGuids()
-        {
-            return Ok(new
-            {
-                AutoresControllerTransient = servicioTransient.Guid,
-                servicioTransient = servicioTransient.Guid,
 
-                AutoresControllerScoped = servicioScoped.Guid,
-                servicioScoped = servicioScoped.Guid,
 
-                AutoresControlleSingleton = servicioSingleton.Guid,
-                servicioSingleton = servicioSingleton.Guid,
-            });
-        }
+        //[HttpGet("GUID")]
+        ////[ResponseCache(Duration = 10)]
+        //[ServiceFilter(typeof(MyActionFilter))]
+        //public ActionResult ObtenerGuids()
+        //{
+        //    return Ok(new
+        //    {
+        //        AutoresControllerTransient = servicioTransient.Guid,
+        //        servicioTransient = servicioTransient.Guid,
+
+        //        AutoresControllerScoped = servicioScoped.Guid,
+        //        servicioScoped = servicioScoped.Guid,
+
+        //        AutoresControlleSingleton = servicioSingleton.Guid,
+        //        servicioSingleton = servicioSingleton.Guid,
+        //    });
+        //}
 
 
         [HttpPost]
