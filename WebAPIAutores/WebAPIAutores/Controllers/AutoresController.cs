@@ -5,7 +5,6 @@ using System.Net;
 using WebAPIAutores.Data;
 using WebAPIAutores.Filters;
 using WebAPIAutores.Models;
-using WebAPIAutores.Services;
 
 namespace WebAPIAutores.Controllers
 {
@@ -32,7 +31,7 @@ namespace WebAPIAutores.Controllers
         //[Authorize]
         public async Task<ActionResult<List<Autor>>> Get()
         {
-            return await _context.Autor.Include(x => x.Libros).ToListAsync();
+            return await _context.Autor.ToListAsync();
         }
         [HttpGet("first")]
         public async Task<Autor> GetFirst([FromHeader] int miValor, [FromQuery] string nombre)

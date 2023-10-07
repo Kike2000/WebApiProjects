@@ -4,7 +4,6 @@ using System.Text.Json.Serialization;
 using WebAPIAutores.Data;
 using WebAPIAutores.Filters;
 using WebAPIAutores.Middlewares;
-using WebAPIAutores.Services;
 
 namespace WebAPIAutores
 {
@@ -26,17 +25,12 @@ namespace WebAPIAutores
             }).AddJsonOptions(x =>
             x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
             );
-            services.AddTransient<IService, ServicioA>();
+            
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<ServicioTransient>();
-            services.AddTransient<MyActionFilter>();
-            services.AddScoped<ServicioScoped>();
-            services.AddSingleton<ServicioSingleton>();
-            services.AddHostedService<WriteFile>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
-            services.AddResponseCaching();
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
         }
@@ -47,16 +41,6 @@ namespace WebAPIAutores
             //app.UseMiddleware<LogAnswerMiddleware>();
             //app.UseLogAnswerMiddleware();
 
-
-            app.Map("/ruta1", app =>
-            {
-                app.Run(async context =>
-                {
-                    await context.Response.WriteAsync("Hola estoy interceptando la tubería");
-                });
-            });
-
-
             // Configure the HTTP request pipeline.
             if (env.IsDevelopment())
             {
@@ -64,9 +48,6 @@ namespace WebAPIAutores
                 app.UseSwaggerUI();
             }
             app.UseRouting();
-
-            //Middleware of caché
-            app.UseResponseCaching();
 
             app.UseHttpsRedirection();
 

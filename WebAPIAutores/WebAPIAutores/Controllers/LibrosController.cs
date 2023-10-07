@@ -15,29 +15,29 @@ namespace WebAPIAutores.Controllers
             _context = context;
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<Libro>> Get(int id)
-        {
-            return await _context.Libro.Include(p => p.Autor).FirstOrDefaultAsync(p => p.Id == id);
-        }
-        [HttpGet]
-        public async Task<ActionResult<List<Libro>>> GetAll()
-        {
-            return await _context.Libro.Include(p => p.Autor).ToListAsync();
-        }
-        [HttpPost]
-        public async Task<ActionResult> Post(Libro libro)
-        {
-            //Comment
-            var existeAutor = await _context.Autor.FirstOrDefaultAsync(x => x.Id == libro.AutorId);
-            if (existeAutor != null)
-            {
-                libro.Autor = existeAutor;
-                _context.Libro.Add(libro);
-                await _context.SaveChangesAsync();
-                return Ok();
-            }
-            return BadRequest();
-        }
+        //[HttpGet("{id:int}")]
+        //public async Task<ActionResult<Libro>> Get(int id)
+        //{
+        //    return await _context.Libro.Include(p => p.Autor).FirstOrDefaultAsync(p => p.Id == id);
+        //}
+        //[HttpGet]
+        //public async Task<ActionResult<List<Libro>>> GetAll()
+        //{
+        //    return await _context.Libro.Include(p => p.Autor).ToListAsync();
+        //}
+        //[HttpPost]
+        //public async Task<ActionResult> Post(Libro libro)
+        //{
+        //    //Comment
+        //    var existeAutor = await _context.Autor.FirstOrDefaultAsync(x => x.Id == libro.AutorId);
+        //    if (existeAutor != null)
+        //    {
+        //        libro.Autor = existeAutor;
+        //        _context.Libro.Add(libro);
+        //        await _context.SaveChangesAsync();
+        //        return Ok();
+        //    }
+        //    return BadRequest();
+        //}
     }
 }
